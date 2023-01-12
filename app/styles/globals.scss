@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* scroll-behavior: smooth; */
+}
+
+
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  // color: whitesmoke;
+  color: white;
+  // background-color: #000000;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  text-align: center;
+}
+
+.page-section {
+  position: relative;
+  height: calc(100vh - 4rem);
+  // z-index: -10;
+}
+
+// .main-height {
+//   min-height: calc(100vh - 4rem);
+// }
+
+.my-grad-01 {
+  background-image: linear-gradient(
+    90deg,
+    rgba(10, 0, 172, 1) 0%,
+    rgba(82, 0, 120, 1) 25%,
+    rgba(145, 63, 210, 1) 50%,
+    rgba(228, 92, 230, 1) 75%,
+    rgba(255, 48, 206, 1) 100%
+  );
+  filter: blur(125px);
+  position: absolute;
+
+}
+
+.tw-grad-01 {
+  /* bg-gradient-to-r from-fuchsia-500 via-red-600 to-orange-400 */
+  background-image: linear-gradient(
+    to right,
+    rgb(217, 70, 239),
+    rgb(220, 38, 38),
+    rgb(251, 146, 60)
+  );
+}
+
+.tw-grad-02 {
+  background-image: linear-gradient(to right, rgb(165, 180, 252), rgb(192, 132, 252));
+}
+
+/* @media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+} */
