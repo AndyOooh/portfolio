@@ -1,16 +1,19 @@
-import Image from 'next/image';
-import { Inter } from '@next/font/google';
-import Hero from './components/Hero';
-import About from './components/About';
-import Navbar from './components/Navbar';
+'use client';
 
-const inter = Inter({ subsets: ['latin'] });
+import Landing from './sections/landing/Landing';
+import About from './sections/about/About';
+import Work from './sections/work/Work';
+import Contact from './sections/contact/Contact';
+import Skills from 'sections/skills/Skills';
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
+    <main className='w-full lg:w-4/5 max-w-7xl mx-auto flex flex-col'>
+      <Landing />
       <About />
+      <Work />
+      <Skills />
+      <Contact />
     </main>
   );
 }

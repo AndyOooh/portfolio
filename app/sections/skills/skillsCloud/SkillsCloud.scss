@@ -1,0 +1,42 @@
+
+
+.tagcloud {
+  width: auto;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+}
+
+.tagcloud--item:hover {
+  color: var(--color-primary);
+  font-size: 140%;
+  font-weight: 500;
+}
+
+.tag-list {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* .tag-cloud-container {
+      width: 20%;
+      margin: 0 auto;
+    } */
+  .tagcloud {
+    // display: none;
+  }
+
+  .tag-list {
+    // width: 100%;
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // gap: 0.1rem 2rem;
+    // margin-top: 3rem;
+    // font-size: 0.65rem;
+  }
+
+  .tagcloud--item {
+    font-size: 0.6rem;
+  }
+}
+
+/* @media screen and (max-width: 610px) {} */

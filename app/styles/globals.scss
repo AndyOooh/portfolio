@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Cinzel+Decorative:wght@400;700;900&family=Righteous&display=swap');
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -9,14 +11,11 @@
   /* scroll-behavior: smooth; */
 }
 
-
-
+html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
-  // color: whitesmoke;
-  color: white;
-  // background-color: #000000;
+  // scroll-behavior: smooth;
+  // overflow-x: hidden; //disables to enable fixed header
 }
 
 a {
@@ -24,50 +23,59 @@ a {
   text-decoration: none;
 }
 
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  // font-weight: 500;
+}
+
+h5 {
+  // margin-bottom: 3rem;
+  // font-size: 1.2rem;
+}
+
 h1 {
-  text-align: center;
+  // font-size: 2.5rem;
+  // text-align: center;
 }
 
-.page-section {
-  position: relative;
-  height: calc(100vh - 4rem);
-  // z-index: -10;
+// Global utils
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-// .main-height {
-//   min-height: calc(100vh - 4rem);
-// }
-
-.my-grad-01 {
-  background-image: linear-gradient(
-    90deg,
-    rgba(10, 0, 172, 1) 0%,
-    rgba(82, 0, 120, 1) 25%,
-    rgba(145, 63, 210, 1) 50%,
-    rgba(228, 92, 230, 1) 75%,
-    rgba(255, 48, 206, 1) 100%
-  );
-  filter: blur(125px);
-  position: absolute;
-
+// index-ts - therefore global
+.wrapper-height {
+  height: calc(90vh - 4rem);
 }
 
-.tw-grad-01 {
-  /* bg-gradient-to-r from-fuchsia-500 via-red-600 to-orange-400 */
-  background-image: linear-gradient(
-    to right,
-    rgb(217, 70, 239),
-    rgb(220, 38, 38),
-    rgb(251, 146, 60)
-  );
+.border-grad {
+  border: 3px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left bottom, #dc944c, black, #dc944c);
 }
+// -- index-ts - therefore global
+// -- Global utils
 
-.tw-grad-02 {
-  background-image: linear-gradient(to right, rgb(165, 180, 252), rgb(192, 132, 252));
+// Landing
+.cinzel {
+  font-family: 'Cinzel Decorative', cursive;
 }
+.developer {
+  // font-family: 'Audiowide', cursive;
+  font-family: 'Righteous', cursive;
+}
+// -- Lamding
 
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-} */
+// About - ProfileImage
+.inner-shad {
+  box-shadow: inset 0 0 70px 15px #ef4444;
+}
+// -- About - ProfileImage
+
