@@ -11,11 +11,11 @@ function Landing({}: Props) {
     <Section id='landing' center={true}>
       <div className='text-center'>
         <h2 className='text-md sm:text-lg'>Hi, my name is</h2>
-        <h1 className='text-2xl sm:text-3xl md:text-7xl cinzel'>Andreas Øe</h1>
+        <h1 className='text-4xl sm:text-5xl md:text-7xl cinzel font-semibold md:font-bold'>Andreas Øe</h1>
       </div>
       <p>I'm a</p>
       <div className='flex gap-4 font-mono uppercase'>
-        <div className='text-end text-xl font-extrabold '>
+        <div className='text-end text-lg md:text-xl font-extrabold '>
           <p className=''>Frontend</p>
           <p className=''>Backend</p>
           <p className=''>Web3</p>
@@ -23,12 +23,12 @@ function Landing({}: Props) {
           <p className='text-base font-medium'>Backend</p>
           <p className='text-lg font-semibold'>Web3</p> */}
         </div>
-        <div className='text-red-500/70 text-4xl font-black flex flex-col justify-end'>
+        <div className='text-red-500/70 text-3xl md:-text-4xl font-black flex flex-col justify-end'>
           <p>Full</p>
           <p>Stack</p>
         </div>
       </div>
-      <span className='developer text-6xl font-black'>Developer</span>
+      <span className='developer text-4xl md:text-6xl font-black'>Developer</span>
     </Section>
   );
 }

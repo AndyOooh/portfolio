@@ -8,7 +8,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  /* scroll-behavior: smooth; */
+  // scroll-behavior: smooth; 
 }
 
 html,
@@ -51,10 +51,6 @@ h1 {
 }
 
 // index-ts - therefore global
-.wrapper-height {
-  height: calc(90vh - 4rem);
-}
-
 .border-grad {
   border: 3px solid;
   border-image-slice: 1;
@@ -79,3 +75,28 @@ h1 {
 }
 // -- About - ProfileImage
 
+
+// Swiper - Work and Skills
+.swiper-pagination {
+  // position: static !important;
+  // align-self: center;
+  // border: 1px solid red;
+  // bottom: 1rem;
+}
+
+.swiper-pagination-bullet {
+  background-color: white !important;
+  height: 0.75rem;
+  width: 0.75rem;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #dc944c !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #dc944c !important;
+}
+
+// -- Swiper - Work and Skills

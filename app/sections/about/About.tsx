@@ -9,8 +9,8 @@ function About() {
   const title = 'Who I am';
   return (
     <Section id='about' topic={topic} title={title} center>
-      <div className='flex justify-center items-center gap-4 px-8'>
-        <p className='w-3/4'>
+      <div className='flex flex-col md:flex-row justify-center items-center md:px-8'>
+        <p className='w-5/6 text-sm md:text-base'>
           <span>Hello!</span> I'm Andreas, or <span>Andy</span> as the domain says. <br />
           <br />
           From Denmark but relocated to buzzling <span>Bangkok</span> some years ago, I now feel at
@@ -26,8 +26,8 @@ function About() {
           and <span>AWS</span>. <br />
           <br />
         </p>
-        <div className='flex gap-4 w-1/2 mx-auto'>
-          <ProfileImage image='/me/new-profile-crop2.png' className='filter grayscale' />
+        <div className='flex gap-4 w-1/4 md:w-1/2 mx-auto'>
+          <ProfileImage image='/me/new-profile-crop2.png' className='filter grayscale aspect-square' />
         </div>
       </div>
     </Section>

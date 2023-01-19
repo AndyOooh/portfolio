@@ -26,7 +26,7 @@ function SkillsCloud() {
   //   setWindowWidth(clientWidth);
   // });
 
-  const factor = isLgScreen ? 1.2 : isMdScreen ? 1.8 : 3;
+  const factor = isLgScreen ? 1.8 : isMdScreen ? 2.4 : 3;
 
   const optionsCb = useCallback(
     (w: Window & typeof globalThis): TagCloudOptions => ({
@@ -42,10 +42,6 @@ function SkillsCloud() {
       className='h-full flex items-stretch'>
       <TagCloud
         options={optionsCb}
-        // options={(w: Window & typeof globalThis): TagCloudOptions => ({
-        //   radius: Math.min(500, w.innerWidth, w.innerHeight) / factor,
-        //   maxSpeed: 'fast',
-        // })}
         onClick={(tag: string, ev: MouseEvent) => alert(tag)}
         onClickOptions={{ passive: true }}
         className='flex-1 flex items-center'>

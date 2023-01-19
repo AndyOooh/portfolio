@@ -6,17 +6,19 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import './Skills.scss';
+// import './Skills.scss';
 import Section from 'components/section';
 import SkillsCloud from './skillsCloud/SkillsCloud';
 import Certificates from './certificates/Certificates';
+import { useMediaQuery } from 'react-responsive';
 
 const slideNames = ['sphere', 'list', 'certificates'];
 
 function Skills() {
-  const [slideIndex, setSlideIndex] = useState<number>(0);
   const topic = 'Skills';
-  const pageTitles = ['Cloud', 'List', 'Certificates'];
+  const slideTitles = ['Cloud', 'Certificates', 'List'];
+  const [domLoaded, setDomLoaded] = useState(false);
+  const [slideIndex, setSlideIndex] = useState<number>(0);
   const pagination = {
     clickable: true,
     // renderBullet: function (index: number, className: string) {
@@ -24,25 +26,35 @@ function Skills() {
     // },
   };
 
+  const isMdScreen = useMediaQuery({ query: '(min-width: 768px)' });
+
+  useEffect(() => {
+    setDomLoaded(true);
+  }, []);
+
   return (
-    <Section id='skills' topic={topic} title={pageTitles[slideIndex]}>
-      <Swiper
-        onSlideChange={({ realIndex }) => setSlideIndex(realIndex)}
-        slidesPerView={1}
-        spaceBetween={30}
-        pagination={pagination}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        loop={true}
-        className='skillsSwiper flex-1'>
-        <SwiperSlide className='w-full'>
-          <SkillsCloud />
-        </SwiperSlide>
-        <SwiperSlide className='w-full h-48 bg-cyan-400/10'>
-          <Certificates />
-        </SwiperSlide>
-        <SwiperSlide className='w-full h-48 bg-sky-400/10'>Slide 3</SwiperSlide>
-      </Swiper>
+    <Section id='skills' topic={topic} title={slideTitles[slideIndex]}>
+      {domLoaded && (
+        // <div className='flex-1 flex flex-col justify-center items-center '>
+        <Swiper
+          onSlideChange={({ realIndex }) => setSlideIndex(realIndex)}
+          slidesPerView={1}
+          spaceBetween={30}
+          pagination={{ clickable: true }}
+          navigation={isMdScreen}
+          modules={[Pagination, Navigation]}
+          loop={true}
+          className='flex-1 w-11/12'>
+          <SwiperSlide className='w-full'>
+            <SkillsCloud />
+          </SwiperSlide>
+          <SwiperSlide className='w-full bg-cyan-400/10'>
+            <Certificates />
+          </SwiperSlide>
+          <SwiperSlide className='w-full h-48 bg-sky-400/10'>Slide 3</SwiperSlide>
+        </Swiper>
+        // </div>
+      )}
     </Section>
   );
 }

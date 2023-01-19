@@ -8,8 +8,8 @@ import { ProjectType } from './projects';
 
 function SlideCard(project: ProjectType) {
   return (
-    <div key={project.title} className='h-full flex flex-col gap-4 '>
-      <div className='h-2/3 w-full  overflow-hidden'>
+    <div key={project.title} className=' flex flex-col gap-4 my-0'>
+      <div className='h-1/2 w-full overflow-hidden my-0'>
         {project.video ? (
           <ReactPlayer
             url={project.video}
@@ -21,7 +21,7 @@ function SlideCard(project: ProjectType) {
             playing={true}
           />
         ) : (
-          <img src={project.imageRel} className='' alt={project.title} />
+          <img src={project.imageRel} className='h-full xl:h-auto w-full' alt={project.title} />
         )}
       </div>
       <div className='swiper-pagination'></div>
@@ -29,7 +29,7 @@ function SlideCard(project: ProjectType) {
       <div className='flex gap-4'>
         <div className='flex-1 flex justify-end'>
           <a
-            className='btn btn-outline gap-2'
+            className='btn btn-sm md:btn-md btn-outline gap-2'
             href={project.gitHub}
             target='_blank'
             rel='noreferrer'>
@@ -39,7 +39,7 @@ function SlideCard(project: ProjectType) {
         </div>
         <div className='flex-1'>
           <a
-            className={`btn btn-outline gap-2 ${!project.liveDemo ? 'btn-disabled' : ''}`}
+            className={`btn btn-sm md:btn-md btn-outline gap-2 ${!project.liveDemo ? 'btn-disabled' : ''}`}
             href={project.liveDemo}
             target='_blank'
             rel='noreferrer'>
@@ -48,9 +48,9 @@ function SlideCard(project: ProjectType) {
           </a>
         </div>
       </div>
-      <div className='flex gap-4 pb-4 px-4'>
-        <div className='flex-1 flex-wrap flex flex-col gap-2 content-end'>
-          <h1>{project.title}</h1>
+      {/* <div className='flex gap-4 pb-4 px-4'> */}
+        <div className=' flex-wrap flex flex-col gap-2 content-end my-0'>
+          {/* <h1>{project.title}</h1> */}
           <p>{project.type}</p>
           <p>
             {project.technologies.map((tech, idx) =>
@@ -58,15 +58,15 @@ function SlideCard(project: ProjectType) {
             )}
           </p>
         </div>
-        <div className='divider divider-horizontal'></div>
-        <div className='tag-grid flex-1 flex-wrap self-center gap-2'>
+        {/* <div className='divider divider-horizontal'></div> */}
+        {/* <div className=' flex-1 flex-wrap self-center flex gap-2'>
           {project.tags?.map(tag => (
             <div key={tag} className='badge badge-primary badge-outline'>
               {tag}
             </div>
           ))}
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </div>
   );
 }

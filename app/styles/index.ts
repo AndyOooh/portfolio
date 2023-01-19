@@ -2,11 +2,19 @@ export const styles = {
   section: `h-screen flex flex-col justify-center items-center 
 
   `,
-  
+
   sectionWrapper: `
-  wrapper-height
-  mt-[4rem]
+
+  h-[95vh]
+  md:h-[calc(90vh-4rem)]
+
+  md:mt-16
   w-[95%]
+ 
+  p-4
+  pb-20
+
+  
 
   flex
   flex-col
@@ -16,8 +24,9 @@ export const styles = {
   
   border-grad
   backdrop-blur-sm
+  
   bg-primary/5
-  overflow-hidden
+
   
   `,
 

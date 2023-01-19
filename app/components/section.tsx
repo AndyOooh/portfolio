@@ -30,6 +30,7 @@ function Section({ children, id, topic, title, center = false }: SectionProps) {
           <h1 className='text-2xl sm:text-3xl md:text-4xl'>{title}</h1>
         </div>
         {children}
+        {/* <div className='h-12 w-full'></div> */}
       </motion.div>
     </section>
   );
