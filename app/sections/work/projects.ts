@@ -57,7 +57,7 @@ export const projects = [
     image: lotteryLottery,
     gitHub: 'https://github.com/AndyOooh/ETHDenver-group14',
     liveDemo: 'https://encode-client.herokuapp.com/',
-    type: 'Full Stack',
+    type: 'Full Stack - Web3',
     technologies: ['NextJS', 'NestJS', 'Solidity', 'EthersJS'],
     text: 'A decentralized lottery and voting app. Admins can organize lotteries and votes. Users can vote and participate in lotteries. The lottery winner is chosen by a random number generator.',
     tags: ['Web3', 'Hardhat', 'TypeScript', 'BASH', 'Tailwind', 'Chai', 'Mocha'],

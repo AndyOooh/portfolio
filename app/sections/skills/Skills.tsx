@@ -45,7 +45,7 @@ function Skills() {
           navigation={isMdScreen}
           modules={[Pagination, Navigation]}
           loop={true}
-          className='flex-1 w-11/12'>
+          className='flex-1 w-full'>
           <SwiperSlide className='w-full flex-center'>
             <Certificates />
           </SwiperSlide>

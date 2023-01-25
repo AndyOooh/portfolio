@@ -23,7 +23,7 @@ function About() {
           <span>Fast-forward</span> to today, and I’ve completed dozens of courses, bootcamps, personal
           projects and a few collaborations.
         </p>
-        <div className='flex gap-4 w-1/4 md:w-1/2 mx-auto'>
+        <div className='flex gap-4 w-1/2 mx-auto'>
           <ProfileImage
             image='/me/new-profile-crop2.png'
             className='filter grayscale aspect-square'

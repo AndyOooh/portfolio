@@ -10,10 +10,10 @@ import Contact from './sections/contact/Contact';
 export default function Home() {
   return (
     <main className={`${styles.innerWidth} flex flex-col`}>
-      <Skills />
       <Landing />
       <About />
       <Work />
+      <Skills />
       <Contact />
     </main>
   );
