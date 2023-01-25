@@ -7,10 +7,11 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 // import './Skills.scss';
-import Section from 'components/section';
+import Section from 'components/Section';
 import SkillsCloud from './skillsCloud/SkillsCloud';
 import Certificates from './certificates/Certificates';
 import { useMediaQuery } from 'react-responsive';
+import List from './list/List';
 
 const slideNames = ['sphere', 'list', 'certificates'];
 
@@ -35,7 +36,7 @@ function Skills() {
   return (
     <Section id='skills' topic={topic} title={slideTitles[slideIndex]}>
       {domLoaded && (
-        // <div className='flex-1 flex flex-col justify-center items-center '>
+        // <div className='flex-center'>
         <Swiper
           onSlideChange={({ realIndex }) => setSlideIndex(realIndex)}
           slidesPerView={1}
@@ -45,13 +46,15 @@ function Skills() {
           modules={[Pagination, Navigation]}
           loop={true}
           className='flex-1 w-11/12'>
-          <SwiperSlide className='w-full'>
-            <SkillsCloud />
-          </SwiperSlide>
-          <SwiperSlide className='w-full bg-cyan-400/10'>
+          <SwiperSlide className='w-full flex-center'>
             <Certificates />
           </SwiperSlide>
-          <SwiperSlide className='w-full h-48 bg-sky-400/10'>Slide 3</SwiperSlide>
+          <SwiperSlide className='w-full flex-center'>
+            <List />
+          </SwiperSlide>
+          <SwiperSlide className='w-full flex-center'>
+            <SkillsCloud />
+          </SwiperSlide>
         </Swiper>
         // </div>
       )}

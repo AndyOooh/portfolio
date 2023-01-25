@@ -11,51 +11,54 @@ function Footer({}: Props) {
     {
       href: 'https://github.com/AndyOooh',
       icon: <BsGithub color='dc944c' />,
+      name: 'Github',
     },
     {
       href: 'https://stackoverflow.com/users/12930072/andyoh',
       icon: <BsStackOverflow color='dc944c' />,
+      name: 'Stack Overflow',
     },
     {
       href: 'https://www.codewars.com/users/AndyOooh',
       icon: <SiCodewars color='dc944c' />,
+      name: 'Codewars',
     },
     {
       href: 'https://codesandbox.io/u/AndyOooh',
       icon: <SiCodesandbox color='dc944c' />,
+      name: 'CodeSandbox',
     },
     {
       href: 'https://www.linkedin.com/in/andreas-oee',
-      icon: <BsLinkedin color='dc944c' />,
+      icon: <BsLinkedin />,
+      name: 'LinkedIn',
     },
     {
       href: 'https://www.freecodecamp.org/andy_ohhh',
-      icon: <SiFreecodecamp color='dc944c' />,
+      icon: <SiFreecodecamp />,
+      name: 'FreeCodeCamp',
     },
   ];
 
   return (
-    <footer className='flex-center rounded gap-2 bg-primary/20 py-2 px-4'>
+    <footer className='flex-center rounded gap-2 bg-primary/20 py-2 px-4 w-full'>
       <a href='#' className='footer__logo'>
-        AndyOh
+        andyo.xyz
       </a>
-      {/* <ul>
-        {sectionLinks.map((link, i) => (
-          <li key={link.name}>
-            <a href={link.hash}>{link.name}</a>
-          </li>
-        ))}
-      </ul> */}
-      <div className='grid grid-flow-col gap-1 flex-1'>
+
+      <div className='grid grid-flow-col gap-1 '>
         {socials.map((social, i) => (
-          <a
+          <div
             key={social.href}
-            href={social.href}
-            target='_blank'
-            rel='noreferrer'
-            className='p-3 border-2 border-primary color-primary'>
-            {social.icon}
-          </a>
+            className='tooltip hover:tooltip-open 
+            btn btn-primary btn-outline
+            rounded-none border-2
+            flex justify-center items-center'
+            data-tip={social.name}>
+            <a href={social.href} target='_blank' rel='noreferrer'>
+              {social.icon}
+            </a>
+          </div>
         ))}
       </div>
 

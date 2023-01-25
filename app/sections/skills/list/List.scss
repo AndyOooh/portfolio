@@ -1,0 +1,38 @@
+.main-stack {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  place-items: center;
+  place-content: center;
+
+  padding: 0.5rem;
+  border: 1px solid pink;
+
+  & > * {
+    border-radius: 50%;
+    padding: 0.1rem;
+
+    // width: 3.5rem;
+    // height: 3.5rem;
+    width: 100%;
+    max-width: 3rem;
+    height: 100%;
+  }
+
+  & > *:not(:nth-child(5)) {
+    box-shadow: 0 0 8px 1.5px var(--main);
+  }
+}
+
+.current-stack {
+  @extend .main-stack;
+  grid-template-columns: repeat(3, 1fr);
+  // max-height: 3rem;
+
+  & > * {
+    // max-width: 2rem;
+    // max-height: 2rem;
+  }
+}

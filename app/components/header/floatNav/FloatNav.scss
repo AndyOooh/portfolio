@@ -3,7 +3,7 @@
   padding: 0.25rem 1.5rem;
   z-index: 50;
   position: fixed;
-  bottom: 2rem;
+  bottom: 1rem; // shoudl match sectionWrapper mt
   /* left, translateX centers it on page. w/o transX it would start at 50%  */
   left: 50%;
   transform: translateX(-50%);

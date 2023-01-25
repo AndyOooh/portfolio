@@ -1,33 +1,40 @@
+// h should match height of floating nav + it's offset
+
+// h-[calc(100vh-3rem-4px)]
+// 49.6 is measured height (in devtools) of Floatnav
+
+// pbb-20 before (monday)
+
 export const styles = {
-  section: `h-screen flex flex-col justify-center items-center 
+  innerWidth: `w-full lg:w-4/5 max-w-7xl mx-auto`,
+
+  section: `h-screen flex flex-col items-center 
 
   `,
 
   sectionWrapper: `
-
-  h-[95vh]
-  md:h-[calc(90vh-4rem)]
-
-  md:mt-16
   w-[95%]
- 
-  p-4
-  pb-20
 
+  h-[calc(100vh-2rem-(49.6px/2))]
+  md:h-[calc(100vh-6rem)]
   
+  mt-4
+  md:mt-20
+
+  p-4
+  pb-12
+  md:pb-4
 
   flex
   flex-col
+  items-center
 
   scale: 0
   opacity: 0
   
   border-grad
   backdrop-blur-sm
-  
   bg-primary/5
-
-  
   `,
 
   // innerWidth: '2xl:max-w-[1280px] w-full',

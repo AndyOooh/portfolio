@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 
 import { useEffect, useRef, useState } from 'react';
 // import { NavHashLink } from 'react-router-hash-link';
@@ -13,6 +13,7 @@ import { headerVariants } from 'motion/header.motion';
 import Link from 'next/link';
 import HeaderNav from './HeaderNav';
 import FloatNav from 'components/header/floatNav/FloatNav';
+import { useMediaQuery } from 'react-responsive';
 
 export type SectionLink = { name: string; hash: string; icon: JSX.Element };
 
@@ -24,13 +25,16 @@ export const sectionLinks: SectionLink[] = [
 ];
 
 function Header() {
+  const [domLoaded, setDomLoaded] = useState(false);
   const [currentHash, setcurrentHash] = useState<string | null>(null);
+  const isMdScreen = useMediaQuery({ query: '(min-width: 768px)' });
 
   const handleHashchange = () => {
     setcurrentHash(window.location.hash);
   };
 
   useEffect(() => {
+    setDomLoaded(true);
     window.addEventListener('hashchange', handleHashchange);
     return () => {
       window.removeEventListener('hashchange', handleHashchange);
@@ -41,9 +45,9 @@ function Header() {
   //   return () => window.location.hash === link ? 'border-b-2 border-red-500' : '';
   // };
 
-  const large = false;
-
-  return large ? (
+  return !domLoaded ? (
+    <div>Loading...</div>
+  ) : isMdScreen ? (
     <HeaderNav currentHash={currentHash} sectionLinks={sectionLinks} />
   ) : (
     <FloatNav currentHash={currentHash} sectionLinks={sectionLinks} />

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { headerVariants } from 'motion/header.motion';
 import Image from 'next/image';
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
+import { styles } from 'styles';
 import { SectionLink } from './Header';
 
 export type NavProps = {
@@ -44,45 +45,47 @@ function HeaderNav({ currentHash, sectionLinks }: NavProps) {
       py-2
       shadow-lg shadow-red-500/50
       '>
-      <div className='h-full w-full lg:w-4/5 max-w-7xl flex justify-between items-center mx-4 '>
-        <a
-          // smooth
-          href='/#'
-          className={
-            currentHash === ''
-              ? ` border-red-500 ${imageWrapperClasses}`
-              : ` border-transparent ${imageWrapperClasses}`
-          }>
-          <Image
-            src='/ao/ao-gold-frame-trans.png'
-            alt='icon'
-            fill={true}
-            quality={100}
-            sizes='(max-width: 768px) 80vw, (max-width: 1200px) 30vw, 20vw'
-            priority={true}
-            className='p-2 text-orange-400'
-          />
-        </a>
-        <div className='flex justify-center items-center gap-8'>
-          <nav className='hidden md:block'>
-            <ul className='menu menu-horizontal'>{navigation}</ul>
-          </nav>
-          <div className='h-full flex justify-center items-center'>
-            <a
-              href='https://www.linkedin.com/in/andreas-oee'
-              target='_blank'
-              rel='noreferrer'
-              className='p-2 hover:text-white/70 h-full'>
-              <BsLinkedin size={'1.2rem'} />
-            </a>
-            <a
-              href='https://github.com/AndyOooh'
-              target='_blank'
-              rel='noreferrer'
-              className='p-2 hover:text-white/70'>
-              <BsGithub size={'1.2rem'} />
-            </a>
-            {/* <a
+      {/* <div className='h-full w-full lg:w-4/5 max-w-7xl flex justify-between items-center mx-4 '> */}
+      <div className={`${styles.innerWidth} h-full`}>
+        <div className='w-[95%] h-full flex justify-between items-center mx-auto'>
+          <a
+            // smooth
+            href='/#'
+            className={
+              currentHash === ''
+                ? ` border-red-500 ${imageWrapperClasses}`
+                : ` border-transparent ${imageWrapperClasses}`
+            }>
+            <Image
+              src='/ao/ao-gold-frame-trans.png'
+              alt='icon'
+              fill={true}
+              quality={100}
+              sizes='(max-width: 768px) 80vw, (max-width: 1200px) 30vw, 20vw'
+              priority={true}
+              className='p-2 text-orange-400'
+            />
+          </a>
+          <div className='flex justify-center items-center gap-8'>
+            <nav className='hidden md:block'>
+              <ul className='menu menu-horizontal'>{navigation}</ul>
+            </nav>
+            <div className='h-full flex justify-center items-center'>
+              <a
+                href='https://www.linkedin.com/in/andreas-oee'
+                target='_blank'
+                rel='noreferrer'
+                className='p-2 hover:text-white/70 h-full'>
+                <BsLinkedin size={'1.2rem'} />
+              </a>
+              <a
+                href='https://github.com/AndyOooh'
+                target='_blank'
+                rel='noreferrer'
+                className='p-2 hover:text-white/70'>
+                <BsGithub size={'1.2rem'} />
+              </a>
+              {/* <a
               href='https://stackoverflow.com/users/12930072/andyoh'
               target='_blank'
               rel='noreferrer'>
@@ -97,6 +100,7 @@ function HeaderNav({ currentHash, sectionLinks }: NavProps) {
             <a href='https://www.freecodecamp.org/andy_ohhh' target='_blank' rel='noreferrer'>
               <SiFreecodecamp />
             </a> */}
+            </div>
           </div>
         </div>
       </div>

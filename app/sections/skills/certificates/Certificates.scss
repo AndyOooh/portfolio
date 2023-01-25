@@ -1,46 +1,97 @@
-.cert-grid {
-  display: grid;
-  grid-template-columns: repeat(60, 1fr);
-  //   grid-template-rows: 9fr 8fr 7fr 6fr 5fr 4fr 3fr 2fr 1fr;
-  //   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-auto-flow: row;
-  gap: 0.2rem;
+@tailwind utilities;
 
-  & > div {
-    width: 100%;
-    background-color: purple;
+@layer utilities {
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(60, 1fr);
+    grid-auto-flow: row;
+    gap: 0.2rem;
 
-    & img {
-      //   width: 100%;
-      height: 100%;
-      object-fit: cover;
+    & > div {
+      width: 100%;
+      background-color: purple;
+      // border: 2px solid blue !important;
+
+      & img {
+        //   width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .item-1,
+    .item-2,
+    .item-3,
+    .item-4 {
+      grid-column: span 30;
+    }
+
+    .item-5,
+    .item-6,
+    .item-7,
+    .item-8,
+    .item-9,
+    .item-10,
+    .item-11,
+    .item-12,
+    .item-13,
+    .item-14,
+    .item-15 {
+      grid-column: span 20;
     }
   }
-}
 
-.item-1,
-.item-2,
-.item-3 {
-  grid-column: span 20;
-}
+  .cert-grid-md {
+    @extend .cert-grid;
+    border: 2px solid yellow;
+    // padding: 4rem 0; // doent work, just expands div
 
-.item-4,
-.item-5,
-.item-6,
-.item-7 {
-  grid-column: span 15;
-}
+    & > div {
+      // border: 2px solid green !important;
+    }
 
-.item-8,
-.item-9,
-.item-10,
-.item-11,
-.item-12 {
-  grid-column: span 12;
-}
+    .item-1,
+    .item-2,
+    .item-3 {
+      grid-column: span 20;
+    }
 
-.item-13,
-.item-14,
-.item-15 {
-  grid-column: span 10;
+    .item-4,
+    .item-5,
+    .item-6,
+    .item-7 {
+      grid-column: span 15;
+    }
+
+    .item-8,
+    .item-9,
+    .item-10,
+    .item-11,
+    .item-12 {
+      grid-column: span 12;
+    }
+
+    .item-13,
+    .item-14,
+    .item-15 {
+      grid-column: span 10;
+    }
+  }
+
+  .cert-grid-lg {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.1rem;
+
+
+    & > div {
+      // width: 100%;
+      // height: 100%;
+    }
+  }
+
+  .cert-grid-laptop {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

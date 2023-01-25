@@ -7,7 +7,7 @@ type Props = {};
 
 function Certificates({}: Props) {
   return (
-    <div className='cert-grid'>
+    <div className='cert-grid-lg lg:cert-grid-laptop'>
       {certList.map((cert, idx) => (
         <div key={cert.subtitle + cert.title} className={`item-${idx + 1} border-8 border-red-500`}>
           <div className='h-full'>

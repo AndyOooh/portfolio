@@ -24,23 +24,12 @@ a {
 }
 
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  // font-weight: 500;
+:root {
+  --main: #dc944c;
+  
 }
 
-h5 {
-  // margin-bottom: 3rem;
-  // font-size: 1.2rem;
-}
 
-h1 {
-  // font-size: 2.5rem;
-  // text-align: center;
-}
 
 // Global utils
 .flex-center {
@@ -71,7 +60,8 @@ h1 {
 
 // About - ProfileImage
 .inner-shad {
-  box-shadow: inset 0 0 70px 15px #ef4444;
+  // box-shadow: inset 0 0 70px 15px #ef4444;
+  background: radial-gradient(ellipse at center, rgba(255, 0, 0, 0) 33%,rgba(255, 0, 0, 0.5) 66%, rgb(255, 0, 0) 100%);
 }
 // -- About - ProfileImage
 
