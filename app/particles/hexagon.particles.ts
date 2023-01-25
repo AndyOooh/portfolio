@@ -125,7 +125,8 @@ export const particlesOptions = {
         factor: 3,
         radius: 200,
       },
-      trail: {  // nailed this
+      trail: {
+        // nailed this
         delay: 0.005,
         pauseOnStop: true,
         quantity: 1,
@@ -232,31 +233,32 @@ export const particlesOptions = {
     },
     color: {
       value: '#ff0000',
-      animation: { // color change
-        // h: {
-        //   count: 0,
-        //   enable: true,
-        //   offset: 0,
-        //   speed: 50,
-        //   decay: 0,
-        //   sync: false,
-        // },
-        // s: {
-        //   count: 0,
-        //   enable: false,
-        //   offset: 0,
-        //   speed: 1,
-        //   decay: 0,
-        //   sync: true,
-        // },
-        // l: {
-        //   count: 0,
-        //   enable: false,
-        //   offset: 0,
-        //   speed: 1,
-        //   decay: 0,
-        //   sync: true,
-        // },
+      animation: {
+        // color change
+        h: {
+          count: 0,
+          enable: false,
+          offset: 0,
+          speed: 50,
+          decay: 0,
+          sync: false,
+        },
+        s: {
+          count: 0,
+          enable: false,
+          offset: 0,
+          speed: 1,
+          decay: 0,
+          sync: true,
+        },
+        l: {
+          count: 0,
+          enable: false,
+          offset: 0,
+          speed: 1,
+          decay: 0,
+          sync: true,
+        },
       },
     },
     groups: {},
@@ -339,11 +341,11 @@ export const particlesOptions = {
     opacity: {
       random: {
         enable: true,
-        minimumValue: 0.3,
+        minimumValue: 0.1,
       },
       value: {
-        min: 0.3,
-        max: 0.8,
+        min: 0.1,
+        max: 0.9,
       },
       animation: {
         count: 0,
@@ -353,7 +355,7 @@ export const particlesOptions = {
         sync: false,
         destroy: 'none',
         startValue: 'random',
-        minimumValue: 0.3,
+        minimumValue: 0.1,
       },
     },
     reduceDuplicates: false,

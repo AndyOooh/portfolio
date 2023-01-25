@@ -17,7 +17,7 @@ const slideNames = ['sphere', 'list', 'certificates'];
 
 function Skills() {
   const topic = 'Skills';
-  const slideTitles = ['Cloud', 'Certificates', 'List'];
+  const slideTitles = ['List', 'Certificates', 'Cloud'];
   const [domLoaded, setDomLoaded] = useState(false);
   const [slideIndex, setSlideIndex] = useState<number>(0);
   const pagination = {
@@ -47,10 +47,10 @@ function Skills() {
           loop={true}
           className='flex-1 w-full'>
           <SwiperSlide className='w-full flex-center'>
-            <Certificates />
+            <List />
           </SwiperSlide>
           <SwiperSlide className='w-full flex-center'>
-            <List />
+            <Certificates />
           </SwiperSlide>
           <SwiperSlide className='w-full flex-center'>
             <SkillsCloud />

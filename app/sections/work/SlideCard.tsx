@@ -21,6 +21,7 @@ function SlideCard(project: ProjectType) {
             playing={true}
           />
         ) : (
+          // eslint-disable-next-line @next/next/no-img-element
           <img
             src={project.image}
             className='h-full xl:h-auto w-full object-contain'
@@ -28,9 +29,9 @@ function SlideCard(project: ProjectType) {
           />
         )}
       </div>
-      <div className='p-2 flex flex-col gap-2'>
+      <div className='p-2 flex flex-col gap-2 md:gap-8'>
         <div className='swiper-pagination'></div>
-        {/* <div className='flex-1 flex gap-4 p-4 border-2 border-cyan-300 bg-purple-200'> */}
+        {/* Buttons */}
         <div className='flex gap-4'>
           <div className='flex-1 flex justify-end'>
             <a
@@ -55,24 +56,29 @@ function SlideCard(project: ProjectType) {
             </a>
           </div>
         </div>
-        {/* <div className='flex gap-4 pb-4 px-4'> */}
-        <div className='flex-wrap flex flex-col md:gap-2 md:content-end md:my-0'>
-          {/* <h1>{project.title}</h1> */}
-          <p className='text-lg font-semibold'>{project.type}</p>
-          <p className='text-lg'>
-            {project.technologies.map((tech, idx) =>
-              idx + 1 === project.technologies.length ? tech : tech + ' ● '
-            )}
-          </p>
-        </div>
-        {/* <div className='divider divider-horizontal'></div> */}
-        <p>{project.text}</p>
-        <div className='md:flex-1 flex-wrap self-center flex gap-1'>
-          {project.tags?.map(tag => (
-            <div key={tag} className='badge badge-primary badge-outline'>
-              {tag}
-            </div>
-          ))}
+
+        <div className='flex flex-col w-full md:flex-row'>
+          {/* Info */}
+          <div className='md:flex-1 flex-wrap flex flex-col md:gap-2'>
+            <p className='text-lg font-semibold'>{project.type}</p>
+            <p className='text-lg'>
+              {project.technologies.map((tech, idx) =>
+                idx + 1 === project.technologies.length ? tech : tech + ' ● '
+              )}
+            </p>
+            <p>{project.text}</p>
+          </div>
+
+          <div className='divider md:divider-horizontal' />
+
+          {/* Tags */}
+          <div className='md:flex-1 flex-wrap self-center flex gap-1'>
+            {project.tags?.map(tag => (
+              <div key={tag} className='badge badge-primary badge-outline'>
+                {tag}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

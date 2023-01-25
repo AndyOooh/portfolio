@@ -7,7 +7,8 @@
 }
 
 .tagcloud--item:hover {
-  color: var(--color-primary);
+  color: var(--main);
+  // color: green;
   font-size: 140%;
   font-weight: 500;
 }

@@ -24,9 +24,9 @@ a {
 }
 
 :root {
-  --main: #dc944c;
-  // --red: @apply text-red-500;
-  --red: red;
+  --main: rgb(220, 148, 76); // #dc944c;
+  --red: @apply text-red-500;
+  // --red: red;
 }
 
 // Global utils
@@ -41,14 +41,19 @@ a {
 .border-grad {
   border: 3px solid;
   border-image-slice: 1;
-  border-image-source: linear-gradient(to left bottom, #dc944c, black, #dc944c);
+  border-image-source: linear-gradient(to left bottom, var(--main), black, var(--main));
 }
 
 .border-grad-2 {
   border: 5px solid;
   border-image-slice: 1;
   // border-image-source: linear-gradient(to left bottom, #dc944c, #dc944c, rgb(220, 148, 76, 0.75), #dc944c, #dc944c);
-  border-image-source: linear-gradient(to left bottom, #dc944c, rgb(220, 148, 76, 0.75), #dc944c);
+  border-image-source: linear-gradient(
+    to left bottom,
+    var(--main),
+    rgb(220, 148, 76, 0.75),
+    var(--main)
+  );
 }
 // -- index-ts - therefore global
 // -- Global utils
@@ -63,15 +68,10 @@ a {
 }
 // -- Lamding
 
-// About - ProfileImage
+// About - ProfileImage - changed from BS to radial BG bc responsive.
 .inner-shad {
   // box-shadow: inset 0 0 70px 15px #ef4444;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(255, 0, 0, 0) 33%,
-    rgba(255, 0, 0, 0.5) 66%,
-    rgb(255, 0, 0) 100%
-  );
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 33%, var(--main) 100%);
 }
 // -- About - ProfileImage
 
@@ -90,12 +90,19 @@ a {
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #dc944c !important;
+  background-color: var(--main) !important;
 }
 
 .swiper-button-prev,
 .swiper-button-next {
-  color: #dc944c !important;
+  color: var(--main) !important;
 }
 
 // -- Swiper - Work and Skills
+
+#about {
+  span {
+    // color: var(--red);
+    color: var(--main);
+  }
+}

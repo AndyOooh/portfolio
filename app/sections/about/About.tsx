@@ -13,14 +13,14 @@ function About() {
         <p className='w-5/6 text-sm md:text-base'>
           {/* <span>Hello!</span> I'm Andreas, or <span>Andy</span> as the domain says. <br />
           <br /> */}
-          A Danish national relocated to buzzling <span>Bangkok</span> some years ago. I spend my days 
-          in the 'big mango' with my <span>girlfriend</span>, playing football and building web things. 
+          A <span>Danish</span> national relocated to buzzling <span>Bangkok</span> some years ago. I spend my days 
+          in the 'big mango' with my girlfriend, playing football and <span>building web</span> things. 
           <br />
           <span>My interest</span> in web development began in <span>2020</span> when I couldn't
-          find the tools I needed for my <span>crypto</span> projects. After playing around with
-          different APIs in the backend, the frontend quickly caught my interest as well. <br />
+          find the tools I needed for my crypto projects. After playing around with
+          different <span>APIs</span> in the backend, the frontend quickly caught my interest as well. <br />
           <br />
-          <span>Fast-forward</span> to today, and I’ve completed dozens of courses, bootcamps, personal
+          <span>Fast-forward</span> to today, and I’ve completed dozens of courses, <span>bootcamps</span>, personal
           projects and a few collaborations.
         </p>
         <div className='flex gap-4 w-1/2 mx-auto'>

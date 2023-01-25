@@ -52,3 +52,10 @@ function SkillsCloud() {
 }
 
 export default React.memo(SkillsCloud);
+
+
+
+// TODO:
+// toggle/dropddown: web3, standard, concepts, (maybe backend, frontend)
+// Search: search anything and it will light up on cloud and/or will have a small text
+// onhover: show text as tooltip

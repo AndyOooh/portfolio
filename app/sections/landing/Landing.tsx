@@ -1,46 +1,27 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useEffect, useState } from 'react';
-import Section from 'components/Section';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { nameVariants } from 'motion/landing.motion';
 
-type Props = {};
+import Section from 'components/Section';
+import { nameVariants, pVariants } from 'motion/landing.motion';
 
-function Landing({}: Props) {
-  const topic = 'Hi, my name is';
-  const title = 'Andreas Øe';
-
+function Landing() {
   const [pIndex, setPIndex] = useState(0);
   const pTexts = ['Frontend', 'Backend', 'Web3'];
+  const resume = './Andreas Oee - Junior Full Stack - Resume.pdf'
 
   useEffect(() => {
     const interval = setInterval(() => {
       let next = pIndex + 1;
       setPIndex(next % pTexts.length);
-    }, 3000);
+    }, 5000);
 
     return () => {
       clearInterval(interval);
     };
   }, [pIndex, pTexts.length]);
 
-  const pVariants = {
-    hide: {
-      x: 100,
-      opacity: 0,
-    },
-    show: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: {
-      x: -100,
-      opacity: 0,
-    },
-  };
-
   return (
-    // <Section id='landing' justify='center'>
     <Section id='landing'>
       <div className='flex-center h-full'>
         <motion.div
@@ -48,21 +29,14 @@ function Landing({}: Props) {
           initial='hidden'
           animate='visible'
           className='text-center'>
-          <h2 className='text-md sm:text-lg'>{topic}</h2>
+          <h2 className='text-md sm:text-lg'>Hi, my name is</h2>
           <h1 className='text-4xl sm:text-5xl md:text-7xl cinzel font-semibold md:font-bold'>
-            {title}
+            Andreas Øe
           </h1>
         </motion.div>
-        <p>I'm a</p>
+        <p className='text-md sm:text-lg'>I'm a</p>
         <div className='flex gap-4 font-mono uppercase w-full mx-auto'>
           <div className='flex-1 text-end text-lg md:text-xl font-extrabold flex items-center justify-end'>
-            {/* <motion.div variants={container} initial='hidden' animate='show'>
-            {texts.map((text, index) => (
-              <motion.p variants={item} key={index}>
-                {text}
-              </motion.p>
-            ))}
-          </motion.div> */}
             <AnimatePresence mode='wait'>
               <motion.p
                 key={pTexts[pIndex]}
@@ -74,69 +48,19 @@ function Landing({}: Props) {
               </motion.p>
             </AnimatePresence>
           </div>
-          <div className='flex-1 text-red-500/70 text-3xl md:-text-4xl font-black flex flex-col justify-end'>
-            <p>Full</p>
-            <p>Stack</p>
+          <div className='developer flex-1 text-red-500 text-3xl md:-text-4xl font-black flex flex-col justify-end'>
+            <p className='leading-none'>Full</p>
+            <p className='leading-none'>Stack</p>
           </div>
         </div>
-        <span className='developer text-4xl md:text-6xl font-black'>Developer</span>
+        <p className='developer text-4xl md:text-6xl font-black'>Developer</p>
+        <div className='flex gap-2 mt-6 mx-auto w-3/5'>
+          <a href={resume} target='_blank' rel='noreferrer' className='flex-1 btn btn-sm btn-primary btn-outline'>Resumé</a>
+          <a href='#contact' className='flex-1 btn btn-sm btn-primary btn-outline'>Contact</a>
+        </div>
       </div>
     </Section>
   );
 }
-
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      // repeatType: 'reverse',
-      duration: 2,
-      // delayChildren: 1,
-      when: 'beforeChildren',
-      staggerChildren: 2,
-    },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, color: 'red' },
-  show: {
-    opacity: [1, 0],
-    color: 'green',
-    transition: {
-      // ease: 'easeInOut',
-      // type: 'tween',
-      duration: 2,
-      repeat: Infinity,
-      repeatDelay: 4,
-    },
-  },
-};
-
-// export const pVariants = {
-//   show: {
-//     opacity: 1,
-//     // y: 0,
-//     transition: {
-//       ease: 'easeInOut',
-//       duration: 3,
-//       delay: 2,
-//       // repeatDelay: 3,
-//       // repeatType: 'mirror',
-//       // repeat: Infinity,
-//     },
-//   },
-//   hide: {
-//     // y: -20,
-//     opacity: 0,
-//   },
-//   exit: {
-//     transition: {
-//       ease: 'easeInOut',
-//       duration: 2,
-//     },
-//   },
-// };
 
 export default Landing;
