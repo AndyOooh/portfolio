@@ -70,6 +70,7 @@ export const projects = [
     type: 'Full Stack',
     role: 'Solo project',
     technologies: ['NodeJS', 'React', 'MongoDB', 'Redux'],
+    text: 'A facebook imitation. Users can create and update their profile. They can create and delete posts, comments and likes. They can send, accept and reject friend requests.',
     tags: [
       'RTK-Query',
       'ExpressJS',
@@ -84,16 +85,16 @@ export const projects = [
       'Yup',
     ],
     implementations: ['Secure auth flow with refresh and access tokens'],
-    text: 'A facebook clone....',
   },
   {
     title: 'Persona',
     image: persona1280Start,
     gitHub: 'https://github.com/AndyOooh/persona',
     // liveDemo: 'https://www.theredbook.xyz/login',
-    type: 'Full Stack',
+    type: 'Full Stack - Job Test',
     role: 'Test project - solo',
     technologies: ['Turborepo', 'NodeJS', 'Next13'],
+    text: 'A small, mostly frontend, project with emphasis on testing. Users can answer questions to have a result calculated to find out where on the introvert/extrovert spectrum they are',
     tags: [
       'TypeScript',
       'BASH',
@@ -107,7 +108,6 @@ export const projects = [
       'SASS',
     ],
     implementations: [''],
-    text: 'A job test...',
   },
 
   // {
@@ -124,8 +124,9 @@ export const projects = [
     image: salaryHeroImgRel,
     title: 'Salary Hero',
     gitHub: 'https://github.com/AndyOooh/salary_hero',
-    type: 'Backend - solo',
-    technologies: ['NodeJS', 'ExpressJS', 'PostgreSQl', 'Sequelize'],
-    tags: [],
+    type: 'Backend - Job Test',
+    technologies: ['NodeJS', 'ExpressJS', 'PostgreSQL', 'Sequelize'],
+    text: 'A small backend project with emphasis on CRUD operations on a PostgreSQL database. Application admins can CRUD client-admins, who can CRUD employees to keep track of their salaries.',
+    tags: ['Postman', 'jsonwebtoken', 'bcrypt', 'pgAdmin', 'authentication'],
   },
 ] as ProjectType[];
