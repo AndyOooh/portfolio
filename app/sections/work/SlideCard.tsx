@@ -1,33 +1,30 @@
-import Image from 'next/image';
-import { SwiperSlide } from 'swiper/react';
-import { BsGithub, BsLinkedin, BsGlobe2 } from 'react-icons/bs';
-import { SiInternetexplorer } from 'react-icons/si';
-import ReactPlayer from 'react-player/lazy';
+/* eslint-disable @next/next/no-img-element */
+import { BsGithub, BsGlobe2 } from 'react-icons/bs';
+import { useElementSize } from 'usehooks-ts';
+import cn from 'classnames';
 
 import { ProjectType } from './projects';
 
 function SlideCard(project: ProjectType) {
+  const [containerRef, { width, height }] = useElementSize();
+
+  const wide = width / height > 0.95;
+
+  // const containerClass = cn({
+  //   'lalalal flex gap-4 my-0': true,
+  //   'flex-col': !aspectHigh,
+  //   'flex-row': aspectHigh,
+  // });
+
   return (
-    <div key={project.title} className='flex flex-col gap-4 my-0'>
+    <div key={project.title} ref={containerRef} className='flex flex-col gap-4 my-0'>
       <div className=' w-full overflow-hidden my-0'>
-        {project.video ? (
-          <ReactPlayer
-            url={project.video}
-            className=''
-            loop={true}
-            width='100%'
-            height='100%'
-            muted={true}
-            playing={true}
-          />
-        ) : (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={project.image}
-            className='h-full xl:h-auto w-full object-contain'
-            alt={project.title}
-          />
-        )}
+        <img
+          ref={containerRef}
+          src={project.image}
+          className='h-full xl:h-auto w-full object-contain'
+          alt={project.title}
+        />
       </div>
       <div className='p-2 flex flex-col gap-2 md:gap-8'>
         <div className='swiper-pagination'></div>
@@ -61,24 +58,25 @@ function SlideCard(project: ProjectType) {
           {/* Info */}
           <div className='md:flex-1 flex-wrap flex flex-col md:gap-2'>
             <p className='text-lg font-semibold'>{project.type}</p>
-            <p className='text-lg'>
+            <p className='text-primary'>
               {project.technologies.map((tech, idx) =>
                 idx + 1 === project.technologies.length ? tech : tech + ' ● '
               )}
             </p>
             <p>{project.text}</p>
           </div>
-
-          <div className='divider md:divider-horizontal' />
-
-          {/* Tags */}
-          <div className='md:flex-1 flex-wrap self-center flex gap-1'>
-            {project.tags?.map(tag => (
-              <div key={tag} className='badge badge-primary badge-outline'>
-                {tag}
+          {!wide ? (
+            <>
+              <div className='divider md:divider-horizontal' />
+              <div className='md:flex-1 flex-wrap self-center flex gap-1'>
+                {project.tags?.map(tag => (
+                  <div key={tag} className='badge badge-primary badge-outline'>
+                    {tag}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </>
+          ) : null}
         </div>
       </div>
     </div>

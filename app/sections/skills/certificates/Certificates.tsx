@@ -7,7 +7,7 @@ import { certList } from './certificatesList';
 function Certificates() {
   return (
     <>
-      <div className='cert-grid-lg lg:cert-grid-laptop'>
+      <div className='grid grid-cols-3 sm:grid-cols-4 gap-2 md:w-3/4'>
         {certList.slice(0, 12).map((cert, idx) => (
             <label
               key={cert.subtitle + cert.title}

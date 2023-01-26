@@ -8,7 +8,8 @@ import 'swiper/scss/pagination';
 // import 'swiper/scss/effect-fade';
 import { EffectFade, Navigation, Pagination } from 'swiper';
 import { projects } from './projects';
-import SlideCard from './SlideCard';
+// import SlideCard from './SlideCard';
+import SlideCard from './SlideCard copy';
 import Section from 'components/Section';
 
 import { useEffect, useState } from 'react';
@@ -35,13 +36,13 @@ function Work() {
           spaceBetween={30}
           // effect={'fade'}
           loop={true}
+          // modules={[EffectFade, Navigation, Pagination]}
+          modules={[Navigation, Pagination]}
           navigation={isMdScreen}
           pagination={{
             clickable: true,
-            el: '.swiper-pagination',
+            // el: '.swiper-pagination',
           }}
-          // modules={[EffectFade, Navigation, Pagination]}
-          modules={[Navigation, Pagination]}
           className='flex-1 w-full rounded-xl border-2 border-primary/50 p-2'>
           {projects.map(project => (
             <SwiperSlide key={project.title}>

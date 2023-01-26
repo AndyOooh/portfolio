@@ -41,12 +41,14 @@ function Footer({}: Props) {
   ];
 
   return (
-    <footer className='flex-center rounded gap-2 bg-primary/20 py-2 px-4 w-full'>
+    <footer className='flex-center rounded gap-2 bg-primary/20 py-2 w-full'>
       <a href='#' className='footer__logo'>
         andyo.xyz
       </a>
 
-      <div className='grid grid-flow-col gap-1 '>
+      {/* <div className='grid grid-flow-col gap-1 w-full border-2 border-red-300'> */}
+      {/* <div className='flex justify-center flex-wrap gap-1 w-full border-2 border-red-300'> */}
+      <div className='flex justify-center gap-1'>
         {socials.map((social, i) => (
           <div
             key={social.href}

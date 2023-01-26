@@ -39,18 +39,18 @@ function Skills() {
         // <div className='flex-center'>
         <Swiper
           onSlideChange={({ realIndex }) => setSlideIndex(realIndex)}
-          slidesPerView={1}
+          // slidesPerView={1}
           spaceBetween={30}
-          pagination={{ clickable: true }}
-          navigation={isMdScreen}
-          modules={[Pagination, Navigation]}
           loop={true}
+          modules={[Pagination, Navigation]}
+          navigation={isMdScreen}
+          pagination={{ clickable: true }}
           className='flex-1 w-full'>
-          <SwiperSlide className='w-full flex-center'>
-            <List />
+          <SwiperSlide className='flex-center'>
+            <Certificates />
           </SwiperSlide>
           <SwiperSlide className='w-full flex-center'>
-            <Certificates />
+            <List />
           </SwiperSlide>
           <SwiperSlide className='w-full flex-center'>
             <SkillsCloud />
