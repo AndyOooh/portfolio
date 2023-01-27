@@ -11,9 +11,10 @@ function Certificates() {
         {certList.slice(0, 12).map((cert, idx) => (
             <label
               key={cert.subtitle + cert.title}
+              // role='button'
               // htmlFor='my-modal''
               htmlFor={`modal-${idx}`}
-              className={`item-${idx} border-grad-2`}>
+              className={`item-${idx} border-grad-2 hover:scale-125 hover:cursor-pointer`}>
               {/* <div key={cert.subtitle + cert.title} className={`item-${idx + 1} border-grad-2`}> */}
               <div className='h-full'>
                 <div className='object-cover h-full bg-white'>

@@ -28,6 +28,7 @@
     "react-particles": "^2.7.1",
     "react-player": "^2.11.0",
     "react-responsive": "^9.0.2",
+    "react-spinners": "^0.13.8",
     "sass": "^1.57.1",
     "swiper": "^8.4.5",
     "tsparticles": "^2.7.1",

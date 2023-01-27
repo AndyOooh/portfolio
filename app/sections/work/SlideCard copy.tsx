@@ -10,7 +10,7 @@ import { ProjectType } from './projects';
 function SlideCard(project: ProjectType) {
   const [cardRef, { width: cardWidth, height: cardHeight }] = useElementSize();
 
-  const wide = cardWidth / cardHeight > 0.975;
+  const wide = cardWidth / cardHeight > 1.07;
   console.log('🚀  file: SlideCard copy.tsx:14  wide', wide);
 
   const cardClass = cn({
@@ -38,6 +38,11 @@ function SlideCard(project: ProjectType) {
   const tagClass = cn({
     'flex flex-wrap gap-1 w-full': true,
     'flex-1': !wide,
+  });
+
+  const dividerClass = cn({
+    'divider m-2': wide,
+    'divider-horizontal m-2 md:m-4': !wide,
   });
 
   return (
@@ -87,7 +92,8 @@ function SlideCard(project: ProjectType) {
         {/* Tags ------------------------- */}
         {cardHeight > 575 ? (
           <>
-            <div className='divider m-1 md:m-4 md:divider-horizontal' />
+            <div className={dividerClass} />
+            {/* <div className='divider' /> */}
             <div className={tagClass}>
               {project.tags?.map(tag => (
                 <div key={tag} className='badge badge-primary badge-outline'>

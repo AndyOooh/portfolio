@@ -24,9 +24,9 @@ function Section({ children, id, topic, title, between, center }: SectionProps) 
   return (
     <section id={id} className={styles.section}>
       <motion.div
-        // variants={sectionVariants}
-        // initial='hidden'
-        // whileInView='visible'
+        variants={sectionVariants}
+        initial='hidden'
+        whileInView='visible'
         className={wrapperClasses}>
         {topic ? (
           <div className='text-center'>
